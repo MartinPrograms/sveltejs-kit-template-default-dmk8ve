@@ -9,25 +9,43 @@
 
 .topnav {
   background-color: #333;
+	display: flex;
   overflow: hidden;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	border-radius: 10000px
+	border-radius: 10000px;
+	min-height: 10vh;
+				box-shadow: 10px 10px 15px #212121, -10px -10px 15px #424242, inset 2px 2px 15px #333, inset -2px -2px 15px #333;
+
 }
 .topnav a {
+				margin: 10px;
+  		padding: 20px;
+
   float: left;
-  color: #f2f2f2;
+  color: #333;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-	font-family: Arial, Helvetica, sans-serif;
+				background: #333;
+			border-radius: 50px;
+			border-width: 5px;
+			border-color: #333;
+			border-style: solid;
 
+			position:relative;
+			box-shadow: 10px 10px 15px #212121, -10px -10px 15px #424242, inset 2px 2px 15px #333, inset -2px -2px 15px #333;
+						transition:  all .2s;
+			color: white;
+			-webkit-appearance: none;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 100000px;
+	transition:  all .2s;
 }
 .topnav a:hover {
-  background-color: var(--hover-grey);
-  color: white;
+											box-shadow: 5px 5px 15px #212121, -5px -5px 15px #424242, inset 10px 10px 15px #212121, inset -10px -10px 15px #424242;
 }
 
 /* Add a color to the active/current link */
@@ -46,7 +64,7 @@
   		justify-content: center;
   		align-items: center;
   		text-align: center;
-  		min-height: 95vh;
+  		min-height: 90vh;
 			flex-wrap: wrap;
 			margin: 10px;
   		padding: 20px;
@@ -101,14 +119,15 @@
 
 
 	</style>
+	
 	<title>Home</title>
 </head>
 <body class="background">
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a id="1" on:click={() => handleClick("1")} class="active" href="#home">Home</a>
+  <a id="2" on:click={() => handleClick("2")} href="#news">News</a>
+  <a id="3" on:click={() => handleClick("3")} href="#contact">Contact</a>
+  <a id="4" on:click={() => handleClick("4")} href="#about">About</a>
 </div>
 <div class="div">
 
@@ -123,4 +142,63 @@ function Button(){
 	alert("You " + Name + "!")
 }
 let Name = "";
+
+function handleClick(index){
+	if(index == 1){
+		const elem = document.getElementById('1');
+		const elem1 = document.getElementById('2');
+		const elem2 = document.getElementById("3");
+		const elem3 = document.getElementById('4');
+		elem.classList.add("active");
+				elem1.classList.remove("active");
+
+		elem2.classList.remove("active");
+
+		elem3.classList.remove("active");
+
+
+	}
+	if(index == 2){
+		const elem = document.getElementById('1');
+		const elem1 = document.getElementById('2');
+		const elem2 = document.getElementById("3");
+		const elem3 = document.getElementById('4');
+		elem.classList.remove("active");
+				elem1.classList.add("active");
+
+		elem2.classList.remove("active");
+
+		elem3.classList.remove("active");
+
+
+	}
+	if(index == 3){
+		const elem = document.getElementById('1');
+		const elem1 = document.getElementById('2');
+		const elem2 = document.getElementById("3");
+		const elem3 = document.getElementById('4');
+		elem.classList.remove("active");
+				elem1.classList.remove("active");
+
+		elem2.classList.add("active");
+
+		elem3.classList.remove("active");
+
+
+	}
+	if(index == 4){
+		const elem = document.getElementById('1');
+		const elem1 = document.getElementById('2');
+		const elem2 = document.getElementById("3");
+		const elem3 = document.getElementById('4');
+		elem.classList.remove("active");
+				elem1.classList.remove("active");
+
+		elem2.classList.remove("active");
+
+		elem3.classList.add("active");
+
+
+	}
+}
 </script>
